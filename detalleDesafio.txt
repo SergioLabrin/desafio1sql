@@ -1,0 +1,40 @@
+Create database sergiolabrin123;
+
+\c Sergiolabrin123
+
+
+-- 3. Crear una tabla llamada clientes
+
+ CREATE TABLE clientes(
+    email VARCHAR(50),
+    nombre VARCHAR,
+    telefono VARCHAR(16),
+    empresa VARCHAR(50),
+    prioridad SMALLINT CHECK (prioridad BETWEEN 1 AND 10)
+);
+
+-- 4. Ingresar 10 clientes distintos con distintas prioridades
+
+
+INSERT INTO clientes(email, nombre, telefono, empresa, prioridad) VALUES
+('cliente1@example.com', 'Cliente Uno', '1234567890', 'Empresa Uno', 8),
+('cliente2@example.com', 'Cliente Dos', '2345678901', 'Empresa Dos', 5),
+('cliente3@example.com', 'Cliente Tres', '3456789012', 'Empresa Tres', 9),
+('cliente4@example.com', 'Cliente Cuatro', '4567890123', 'Empresa Cuatro', 6),
+('cliente5@example.com', 'Cliente Cinco', '5678901234', 'Empresa Cinco', 10),
+('cliente6@example.com', 'Cliente Seis', '6789012345', 'Empresa Seis', 3),
+('cliente7@example.com', 'Cliente Siete', '7890123456', 'Empresa Siete', 2),
+('cliente8@example.com', 'Cliente Ocho', '8901234567', 'Empresa Ocho', 7),
+('cliente9@example.com', 'Cliente Nueve', '9012345678', 'Empresa Nueve', 1),
+('cliente10@example.com', 'Cliente Diez', '0123456789', 'Empresa Diez', 4);
+
+-- 5. Selecciona los tres clientes de mayor prioridad
+c\ SELECT * FROM clientes
+ORDER BY prioridad DESC
+LIMIT 3;
+
+-- 6. Selecciona todos los clientes cuya prioridad sea mayor a 5
+\c
+SELECT * FROM clientes
+WHERE prioridad > 5;
+
